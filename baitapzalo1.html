@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C1</title>
+</head>
+<body>
+<h2 id="result" style="font-style: italic"></h2>
+<script>
+function isPrime(a) {
+ if(a<2){
+ return false;
+ }else {
+for (let j = 2; j <= Math.sqrt(a); j++) {
+if (a % j === 0) {
+ return false;
+ }
+ }
+ }
+ return true;
+}
+function sumPrime(number){
+let count = 0;
+  let sum = 0;
+for (let N = 2; count <= number; N++) {
+if (isPrime(N)) {
+count++;
+ sum += N;
+ }
+ }
+
+ return sum;
+}
+let numbers = prompt(" số nguyên tố cần tính tổng: ")
+document.getElementById("result").innerHTML = "Tổng của " +numbers+ " số nguyên tố đầu tiên là: " + sumPrime(numbers)
+
+</script>
+</body>
+</html>
